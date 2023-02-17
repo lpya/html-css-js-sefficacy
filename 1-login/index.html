@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script>
+        function onFucus() {
+            let owl = document.getElementById('owl')
+            owl.classList.add("owl-close")
+        }
+
+        function onBlur() {
+            let owl = document.getElementById('owl')
+            owl.classList.remove("owl-close")
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="login">
+        <div class="card">
+            <div id="owl" class="owl">
+                <div class="eyes"></div>
+                <div class="arm-up-right"></div>
+                <div class="arm-up-left"></div>
+                <div class="arm-down-left"></div>
+                <div class="arm-down-right"></div>
+            </div>
+            <div class="content">
+                <div class="item">
+                    <img class="icon" src="./images/account.png" alt="">
+                    <input type="text" placeholder="account">
+                </div>
+                <div class="item">
+                    <img class="icon" src="./images/pwd.png" alt="">
+                    <input type="password" placeholder="password" onfocus="onFucus()" onblur="onBlur()">
+                </div>
+                <div class="item">
+                    <img class="icon" src="./images/code.png" alt="">
+                    <input type="text" placeholder="code">
+                    <img class="code" src="./images/number.png" alt="">
+                </div>
+                <div class="item">
+                    <button>登陆</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
