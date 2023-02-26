@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽屉</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<script>
+    function handleInput() {
+        const inputDom = document.getElementsByTagName("input")[0]
+        const drawerDom = document.getElementsByClassName("drawer-wrapper")[0]
+        if (inputDom.checked) {
+            drawerDom.setAttribute("class", 'drawer-wrapper open')
+        } else {
+            drawerDom.setAttribute("class", 'drawer-wrapper close')
+        }
+    }
+</script>
+<body>
+    <header>
+        <label class="burger">
+            <input onclick="handleInput()" type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    </header>
+    <div class="drawer-wrapper">
+        <div class="drawer rtl">Hello World!</div>
+    </div>
+</body>
+</html>

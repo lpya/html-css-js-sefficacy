@@ -1,0 +1,111 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #eee;
+}
+
+header {
+    position: relative;
+    height: 60px;
+    background-color: #fff;
+}
+
+.burger {
+    position: absolute;
+    cursor: pointer;
+    right: 40px;
+    top: 15px;
+    height: 30px;
+    width: 35px;
+    z-index: 10000;
+}
+
+input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+.burger span {
+    position: absolute;
+    width: 35px;
+    height: 5px;
+    display: inline-block;
+    background-color: #999;
+    border-radius: 100px;
+    transition: .3s all;
+}
+
+.burger span:nth-of-type(1) {
+    top: 0px;
+}
+
+
+.burger span:nth-of-type(2) {
+    top: 12px;
+}
+
+.burger span:nth-of-type(3) {
+    bottom: 0px;
+}
+
+
+input[type]:checked~span:nth-of-type(1) {
+    transform: rotate(45deg);
+    transform-origin: top left;
+    width: 35px;
+    left: 3px;
+
+}
+
+input[type]:checked~span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    width: 35px;
+    left: -1px;
+    box-shadow: 0 0 10px #495057;
+}
+
+input[type]:checked~span:nth-of-type(2) {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+.drawer-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    transition: 0.3s all;
+    opacity: 0;
+}
+
+.drawer-wrapper.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.drawer-wrapper.close {
+    visibility: hidden;
+}
+
+.drawer-wrapper.open .drawer {
+    transform: translate(0, 0);
+
+}
+
+.drawer {
+    position: absolute;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    transition: 0.3s all;
+    transform: translate(100%, 0);
+}
