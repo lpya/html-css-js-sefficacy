@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #202020;
+}
+
+button {
+    position: relative;
+    margin-top: 300px;
+    padding: 20px 60px;
+    cursor: pointer;
+    transition: 0.5s all;
+    background-color: #202020;
+}
+
+button span {
+    color: #707070;
+    font-size: 20px;
+}
+
+button:hover {
+    box-shadow: inset 0px 0px 25px #ff7700;
+}
+
+button:active {
+    margin-top: 305px;
+    transition: 0.2s all;
+    box-shadow: inset 0px 0px 25px #ffb676;
+}
+
+button div {
+    transition: 0.5s all;
+    position: absolute;
+    background-color: #ff7700;
+    box-shadow: 0 0 15px #ff7700, 0 0 30px #ff7700, 0 0 50px #ff7700;
+}
+
+button .top {
+    width: 15px;
+    height: 2px;
+    top: 0;
+    left: 0;
+}
+
+button .bottom {
+    width: 15px;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+}
+
+button .left {
+    width: 2px;
+    height: 15px;
+    top: 0;
+    left: 0;
+}
+
+button .right {
+    width: 2px;
+    height: 15px;
+    bottom: 0;
+    right: 0;
+}
+
+button:hover .top,
+button:hover .bottom {
+    width: 100%;
+}
+
+button:hover .left,
+button:hover .right {
+    height: 100%;
+}
