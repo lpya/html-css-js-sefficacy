@@ -1,0 +1,162 @@
+:root {
+  --base-bg: rgba(80, 210, 0, 0.3);
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #202020;
+}
+
+.radar {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: repeating-radial-gradient(transparent,
+      transparent 4.5%,
+      var(--base-bg) 5%,
+      transparent 5.5%),
+    linear-gradient(transparent 49.7%,
+      var(--base-bg),
+      var(--base-bg),
+      transparent 50.3%),
+    linear-gradient(to right,
+      transparent 49.7%,
+      var(--base-bg),
+      var(--base-bg),
+      transparent 50.3%),
+    #002100;
+  border-radius: 50%;
+  border: 5px solid #8b8b8b;
+}
+
+.radar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: conic-gradient(transparent 80%, var(--base-bg));
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+}
+
+.dot {
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  width: 10px;
+  height: 10px;
+  background: #ff7300;
+  border-radius: 50%;
+  animation: dot 2s ease-out infinite;
+
+}
+
+.dot div {
+  transition: 0.5s all;
+  position: absolute;
+  background-color: red;
+  animation: takeaim 2s linear infinite;
+}
+
+.dot-top-1 {
+  width: 10px;
+  height: 2px;
+  top: -15px;
+  left: -15px;
+}
+
+.dot-top-2 {
+  width: 10px;
+  height: 2px;
+  top: -15px;
+  right: -15px;
+}
+
+.dot-bottom-1 {
+  width: 10px;
+  height: 2px;
+  bottom: -15px;
+  right: -15px;
+}
+
+.dot-bottom-2 {
+  width: 10px;
+  height: 2px;
+  bottom: -15px;
+  left: -15px;
+}
+
+.dot-left-1 {
+  width: 2px;
+  height: 10px;
+  top: -15px;
+  left: -15px;
+}
+
+.dot-left-2 {
+  width: 2px;
+  height: 10px;
+  bottom: -15px;
+  left: -15px;
+}
+
+.dot-right-1 {
+  width: 2px;
+  height: 10px;
+  bottom: -15px;
+  right: -15px;
+}
+
+.dot-right-2 {
+  width: 2px;
+  height: 10px;
+  top: -15px;
+  right: -15px;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dot {
+
+  2%,
+  30% {
+    background-color: rgba(255, 115, 0, 0.6);
+  }
+
+  90% {
+    background-color: transparent;
+  }
+
+}
+
+@keyframes takeaim {
+  10% {
+    transform: translateX(10px) translateY(10px);
+    opacity: 0.5;
+  }
+
+  30% {
+    transform: translateX(-10px) translateY(-10px);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateX(0px) translateY(-10px);
+    opacity: 0.5;
+  }
+
+  80% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
