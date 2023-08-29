@@ -19,8 +19,8 @@
   padding: 20px;
   border-radius: 5px;
   height: 150px;
-  cursor: pointer;
   transition: 0.3s all;
+
 }
 
 .list:hover {

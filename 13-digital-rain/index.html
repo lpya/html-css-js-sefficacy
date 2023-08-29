@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数字雨</title>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+</body>
+<script>
+  function init() {
+    const canvas = document.getElementById("canvas")
+    const width = window.innerWidth || document.documentElement.clientWidth
+    const height = window.innerHeight || document.documentElement.clientHeight
+    canvas.width = width
+    canvas.height = height
+    const ctx = canvas.getContext("2d")
+    const fontSize = 20
+    const rows = Math.ceil(height / fontSize)
+    const columns = Math.ceil(width / fontSize)
+    const arrs = new Array(columns).fill(0)
+    function animation() {
+      ctx.fillStyle = "rgba(0,0,0,0.1)"
+      ctx.fillRect(0, 0, width, height)
+      for (let i = 0; i < columns; i++) {
+        ctx.fillStyle = "green"
+        ctx.font = `${fontSize}px 宋体`
+        ctx.fillText(Math.floor(Math.random() * 10), fontSize * i, arrs[i] * fontSize)
+        arrs[i]++
+        if (arrs[i] > rows || Math.random() > 0.98) {
+          arrs[i] = 0
+        }
+      }
+      setTimeout(() => {
+        animation()
+      }, 20)
+    }
+    animation()
+  }
+  init()
+</script>
+
+</html>
