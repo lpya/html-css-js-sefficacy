@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico" />
+  <title>CSS特效合集</title>
+  <style>
+    #link li {
+      padding: 8px 0;
+    }
+
+    #link li a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ol id="link"></ol>
+  </div>
+  <script>
+    function init() {
+      const linkList = [
+        { name: "登录表单", href: "./1-login/index.html" },
+        { name: "底部波浪动画", href: "./2-wave/index.html" },
+        { name: "loading加载（一）", href: "./3-loading-1/index.html" },
+        { name: "旋转立方体", href: "./4-box/index.html" },
+        { name: "骨架屏效果", href: "./5-skeleton/index.html" },
+        { name: "特效之汉堡按钮抽屉功能", href: "./6-drawer/index.html" },
+        { name: "炫酷的发光按钮", href: "./7-button/index.html" },
+        { name: "loading加载（二）", href: "./8-loading-2/index.html" },
+        { name: "开关灯切换效果", href: "./9-switch-theme/index.html" },
+        { name: "列表标签", href: "./10-list-label/index.html" },
+        { name: "激光扫描瞄准", href: "./11-radar/index.html" },
+        { name: "发光卡片", href: "./12-light-card/index.html" },
+        { name: "数字雨", href: "./13-digital-rain/index.html" },
+      ]
+      linkList.forEach((item, index) => {
+        let liDom = document.createElement("li")
+        let alinkDom = document.createElement("a")
+        alinkDom.href = item.href
+        alinkDom.textContent = item.name
+        liDom.append(alinkDom)
+        let linkDom = document.getElementById("link")
+        linkDom.appendChild(liDom)
+      })
+    }
+    init()
+  </script>
+</body>
+
+</html>
