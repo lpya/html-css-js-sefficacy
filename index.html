@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="./favicon.ico" />
-  <title>CSS特效合集</title>
+  <link rel="icon" href="./images/favicon.ico" />
+  <title>HTML+CSS特效案例</title>
+  <link rel="stylesheet" href="./styles/scrollbar.css">
+  <link rel="stylesheet" href="./styles/index.css">
   <style>
     #link li {
       padding: 8px 0;
@@ -18,35 +20,69 @@
 </head>
 
 <body>
-  <div>
-    <ol id="link"></ol>
+  <div id="app">
+    <div class="header"></div>
+    <div class="content">
+      <div class="list" id="list">
+      </div>
+    </div>
   </div>
   <script>
+    function coverOnmouseover(e) {
+      let text = e.target.style.background
+      text = text.replace(".png", ".gif")
+      e.target.style.background = text
+    }
+    function coverOnmouseout(e) {
+      let text = e.target.style.background
+      text = text.replace(".gif", ".png")
+      e.target.style.background = text
+    }
     function init() {
       const linkList = [
-        { name: "登录表单", href: "./1-login/index.html" },
-        { name: "底部波浪动画", href: "./2-wave/index.html" },
-        { name: "loading加载（一）", href: "./3-loading-1/index.html" },
-        { name: "旋转立方体", href: "./4-box/index.html" },
-        { name: "骨架屏效果", href: "./5-skeleton/index.html" },
-        { name: "特效之汉堡按钮抽屉功能", href: "./6-drawer/index.html" },
-        { name: "炫酷的发光按钮", href: "./7-button/index.html" },
-        { name: "loading加载（二）", href: "./8-loading-2/index.html" },
-        { name: "开关灯切换效果", href: "./9-switch-theme/index.html" },
-        { name: "列表标签", href: "./10-list-label/index.html" },
-        { name: "激光扫描瞄准", href: "./11-radar/index.html" },
-        { name: "发光卡片", href: "./12-light-card/index.html" },
-        { name: "数字雨", href: "./13-digital-rain/index.html" },
+        { name: "登录表单", href: "./1-login/index.html", coverUrl: "./images/01.png" },
+        { name: "底部波浪动画", href: "./2-wave/index.html", coverUrl: "./images/02.png" },
+        { name: "loading加载（一）", href: "./3-loading-1/index.html", coverUrl: "./images/03.png" },
+        { name: "旋转立方体", href: "./4-box/index.html", coverUrl: "./images/04.png" },
+        { name: "骨架屏效果", href: "./5-skeleton/index.html", coverUrl: "./images/05.png" },
+        { name: "特效之汉堡按钮抽屉功能", href: "./6-drawer/index.html", coverUrl: "./images/06.png" },
+        { name: "炫酷的发光按钮", href: "./7-button/index.html", coverUrl: "./images/07.png" },
+        { name: "loading加载（二）", href: "./8-loading-2/index.html", coverUrl: "./images/08.png" },
+        { name: "开关灯切换效果", href: "./9-switch-theme/index.html", coverUrl: "./images/09.png" },
+        { name: "列表标签", href: "./10-list-label/index.html", coverUrl: "./images/10.png" },
+        { name: "激光扫描瞄准", href: "./11-radar/index.html", coverUrl: "./images/11.png" },
+        { name: "发光卡片", href: "./12-light-card/index.html", coverUrl: "./images/12.png" },
+        { name: "数字雨", href: "./13-digital-rain/index.html", coverUrl: "./images/13.png" },
       ]
+      let linkListDom = document.getElementById("list")
+
       linkList.forEach((item, index) => {
-        let liDom = document.createElement("li")
-        let alinkDom = document.createElement("a")
-        alinkDom.href = item.href
-        alinkDom.textContent = item.name
-        liDom.append(alinkDom)
-        let linkDom = document.getElementById("link")
-        linkDom.appendChild(liDom)
+        // 链接
+        let aLinkDom = document.createElement("a")
+        aLinkDom.className = "card"
+        aLinkDom.href = item.href
+        //封面
+        let coverDom = document.createElement("div")
+        coverDom.className = "cover"
+        coverDom.style.background = `url(${item.coverUrl})`
+        coverDom.style.backgroundSize = "100% 100%"
+        coverDom.onmouseover = coverOnmouseover
+        coverDom.onmouseout = coverOnmouseout
+        //标题
+        let titleDom = document.createElement("div")
+        titleDom.className = "title"
+        titleDom.textContent = `${index + 1}-${item.name}`
+
+        aLinkDom.appendChild(coverDom)
+        aLinkDom.appendChild(titleDom)
+        linkListDom.appendChild(aLinkDom)
       })
+
+      let cardDom = document.createElement("a")
+      cardDom.className = "card1"
+      linkListDom.appendChild(cardDom)
+      linkListDom.appendChild(cardDom)
+      linkListDom.appendChild(cardDom)
     }
     init()
   </script>
