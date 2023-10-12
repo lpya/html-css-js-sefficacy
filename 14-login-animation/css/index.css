@@ -1,0 +1,93 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+#app {
+  height: 100vh;
+  width: 100%;
+  background-color: #202020;
+}
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #202020;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+
+}
+
+.login .input-item {
+  position: relative;
+}
+
+.login .input-item input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #666;
+  outline: none;
+  background: transparent;
+}
+
+.login .input-item label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #666;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login .input-item input:focus~label,
+.login .input-item input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #e5e5e5;
+  font-size: 12px;
+}
+
+.login form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #666;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.action button {
+  width: 100%;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s;
+  padding: 8px 15px;
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+
+.action button:hover {
+  background-color: rgba(64, 160, 255, 0.7);
+}
+
+.action button:active {
+  background-color: rgba(64, 160, 255, 0.8);
+}
