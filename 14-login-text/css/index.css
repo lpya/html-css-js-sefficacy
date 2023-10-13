@@ -18,7 +18,7 @@
   transform: translate(-50%, -50%);
   background: #202020;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
 
 }
@@ -56,20 +56,6 @@
   left: 0;
   color: #e5e5e5;
   font-size: 12px;
-}
-
-.login form a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #666;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
 }
 
 .action button {
