@@ -1,0 +1,131 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #202020;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 500px;
+  width: 50px;
+  height: 50px;
+  color: #00ff2f;
+}
+
+
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+
+.loader:after {
+  color: #ff0000;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.tip span {
+  font-weight: bold;
+  color: #888;
+}
+
+.tip .dot {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  -webkit-animation: dots 2s infinite linear;
+  animation: dots 2s infinite linear;
+  background-color: #fff;
+  margin-left: 5px;
+}
+
+.dot:nth-child(1) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.dot:nth-child(2) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.dot:nth-child(3) {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+@keyframes spin {
+
+  0%,
+  100% {
+    box-shadow: 0.2em 0 0 0;
+  }
+
+  12% {
+    box-shadow: 0.2em 0.2em 0 0;
+  }
+
+  25% {
+    box-shadow: 0 0.2em 0 0;
+  }
+
+  37% {
+    box-shadow: -0.2em 0.2em 0 0;
+  }
+
+  50% {
+    box-shadow: -0.2em 0 0 0;
+  }
+
+  62% {
+    box-shadow: -0.2em -0.2em 0 0;
+  }
+
+  75% {
+    box-shadow: 0 -0.2em 0 0;
+  }
+
+  87% {
+    box-shadow: 0.2em -0.2em 0 0;
+  }
+}
+
+@keyframes dots {
+  0% {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  30% {
+    background-color: #fff;
+  }
+
+  70%,
+  100% {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
