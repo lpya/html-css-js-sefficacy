@@ -53,6 +53,8 @@
         { name: "激光扫描瞄准", href: "./11-radar/index.html", coverUrl: "./images/11.png" },
         { name: "发光卡片", href: "./12-light-card/index.html", coverUrl: "./images/12.png" },
         { name: "数字雨", href: "./13-digital-rain/index.html", coverUrl: "./images/13.png" },
+        { name: "文本动画登录表单", href: "./14-login-text/index.html", coverUrl: "./images/14.png" },
+        { name: "立体感loading加载效果", href: "./15-loading-3/index.html", coverUrl: "./images/15.png" },
       ]
       let linkListDom = document.getElementById("list")
 
@@ -78,11 +80,12 @@
         linkListDom.appendChild(aLinkDom)
       })
 
-      let cardDom = document.createElement("a")
-      cardDom.className = "card1"
-      linkListDom.appendChild(cardDom)
-      linkListDom.appendChild(cardDom)
-      linkListDom.appendChild(cardDom)
+      for (let i = 0; i < 3; i++) {
+        let cardDom = document.createElement("a")
+        cardDom.className = "card1"
+        linkListDom.appendChild(cardDom)
+      }
+
     }
     init()
   </script>
