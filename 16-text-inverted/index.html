@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #202020;
+      height: 100vh;
+    }
+
+    .tip {
+      position: relative;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .tip::after {
+      position: absolute;
+      content: "Hello World!";
+      transform: rotateX(180deg) skewX(10deg);
+      bottom: -50px;
+      left: 0px;
+      background: linear-gradient(to bottom, transparent 20%, #fff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tip">Hello World!</div>
+</body>
+
+</html>
