@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #202020;
+}
+
+.tip {
+  padding: 1em 1em;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 1em;
+  position: relative;
+  transition: all 0.3s;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 0 0 .5em #fff;
+}
+
+.tip::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+}
