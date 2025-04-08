@@ -1,43 +1,95 @@
 * {
-  padding: 0px;
-  margin: 0px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #202020;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #9b7c21, #005144);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.content {
-  position: relative;
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 40px;
+    width: 400px;
+    position: relative;
 }
 
-.content::after {
-  content: '';
-  position: absolute;
-  left: calc(50% - 3px);
-  bottom: -55px;
-  height: 60px;
-  width: 6px;
-  background: linear-gradient(to bottom, #f04f63, transparent 80%);
-  border-radius: 10px;
-  filter: blur(1px);
+.login-form {
+    color: #fff;
 }
 
-img {
-  height: 50px;
-  animation: animation 0.1s infinite alternate;
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes animation {
-  from {
-    margin-top: 0px;
-  }
+.input-group {
+    margin-bottom: 25px;
+}
 
-  to {
-    margin-top: 5px;
-  }
+input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    color: #fff;
 }
